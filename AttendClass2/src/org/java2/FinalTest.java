@@ -1,0 +1,26 @@
+package org.java2;
+
+public class FinalTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 System.out.println(FinalT.STATICVALUE);
+		 
+		 FinalT finalT = new FinalT(3);
+		 System.out.println(finalT.VALUE1);
+		 System.out.println(finalT.VALUE2);
+	}
+
+}
+
+class FinalT{
+	
+	static final int STATICVALUE = 0;
+	final int VALUE1 = 1;
+	final int VALUE2;
+	
+	public FinalT(int num){
+		
+		//VALUE1 = 1; 만약 생성시 값을 할당하였다면 생성자에서 초기화를 한번 더 하려면 에러가 뜬다
+		VALUE2 = num; // 만약  값을 할당하지 않은  final이 있으면 생성자에서 생성하지 않으면 컴파일 에러
+	}
+}
