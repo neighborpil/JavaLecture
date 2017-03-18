@@ -1,0 +1,19 @@
+package org.java2;
+
+public class FinalTest {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class FinalT{
+	static final int VALUE;
+	
+	public FinalT(){
+		VALUE = 1;
+	}
+}

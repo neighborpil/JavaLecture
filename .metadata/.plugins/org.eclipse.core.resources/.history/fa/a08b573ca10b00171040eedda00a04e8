@@ -1,0 +1,45 @@
+package org.java2;
+
+import java.util.Scanner;
+
+public class TryParseTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ValueWrapper valueWrapper = new ValueWrapper();
+		
+		TryParse tryParse = new TryParse();
+		
+		int num = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()){
+			String text = sc.next();
+			
+			System.out.println(text);
+			Boolean result = tryParse.intTryParse(text, valueWrapper);
+			
+			if(result){
+				System.out.println(valueWrapper.num);
+			}
+		}
+	}
+}
+
+class ValueWrapper{
+	int num = 0;
+}
+
+class TryParse{
+	public Boolean intTryParse(String value, ValueWrapper valueWrapper){
+		
+		try{
+			valueWrapper.num = Integer.parseInt(value);
+			
+			return true;
+		}
+		catch(Exception e){
+			return false;
+		}
+	}
+}

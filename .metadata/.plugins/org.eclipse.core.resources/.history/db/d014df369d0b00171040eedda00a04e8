@@ -1,0 +1,46 @@
+package org.java2;
+
+import java.util.Scanner;
+
+public class TryParseTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		TryParse tryParse = new TryParse();
+		
+		int num = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()){
+			String text = sc.next();
+			
+			System.out.println(text);
+			Boolean result = tryParse.intTryParse("a", num);
+			
+			if(result){
+				System.out.println(num);
+			}
+		}
+		
+		
+		
+	}
+	
+	
+	
+}
+
+class TryParse{
+	public Boolean intTryParse(String value, int num){
+		
+		try{
+			num = Integer.parseInt(value);
+			
+			return true;
+		}
+		catch(Exception e){
+			return false;
+		}
+	}
+}
